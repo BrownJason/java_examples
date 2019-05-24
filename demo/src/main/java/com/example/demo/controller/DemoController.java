@@ -45,7 +45,7 @@ public class DemoController {
 		return new ModelAndView("java_examples/fizzbuzz");
 	}
 	
-	@RequestMapping(value="/fizzbuzz", params="numb", method=RequestMethod.POST)
+	@RequestMapping(value="/java_examples/fizzbuzz", params="numb", method=RequestMethod.POST)
 	public ModelAndView calculate(@RequestParam int numb, @ModelAttribute("fizzbuzz")FizzBuzz fizzbuzz, ModelMap model) {
 		StringBuilder res = new StringBuilder();
 		if(fizzbuzz.getNumb() != 0) {
@@ -63,7 +63,7 @@ public class DemoController {
 		model.addAttribute("classFizzVisibility", "true");
 		model.addAttribute("fizzbuzz", res.toString());
 		
-		return new ModelAndView("fizzbuzz");
+		return new ModelAndView("java_examples/fizzbuzz");
 	}
 
 	@RequestMapping(value="/java_examples/palindrome", method=RequestMethod.GET)
@@ -71,7 +71,7 @@ public class DemoController {
 		return new ModelAndView("java_examples/palindrome");
 	}
 	
-	@RequestMapping(value="/palindrome", params="input", method=RequestMethod.POST)
+	@RequestMapping(value="/java_examples/palindrome", params="input", method=RequestMethod.POST)
 	public ModelAndView palindromeComp(@RequestParam String input, @ModelAttribute("palindrome")Palindrome palindrome, ModelMap model) {
 		String pali = palindrome.getInput().toLowerCase();
 		StringBuilder paliReverse = new StringBuilder(palindrome.getInput()).reverse();
@@ -90,7 +90,7 @@ public class DemoController {
 		model.addAttribute("classFizzVisibility", "false");
 		model.addAttribute("classFiboVisibility", "false");
 		model.addAttribute("classPaliVisibility", "true");
-		return new ModelAndView("palindrome");
+		return new ModelAndView("java_examples/palindrome");
 	}
 	
 	@RequestMapping(value="/java_examples/fibonacci", method=RequestMethod.GET)
@@ -98,7 +98,7 @@ public class DemoController {
 		return new ModelAndView("java_examples/fibonacci");
 	}
 	
-	@RequestMapping(value="/fibonacci", params="number",method=RequestMethod.POST)
+	@RequestMapping(value="/java_examples/fibonacci", params="number",method=RequestMethod.POST)
 	public ModelAndView fiboComplete(@RequestParam int number, @ModelAttribute("fibonacci")Fibonacci fibonacci, ModelMap model) {
 		StringBuilder res = new StringBuilder();
 		if(fibonacci.getNumber() != 0) {
@@ -123,6 +123,6 @@ public class DemoController {
 		model.addAttribute("classFizzVisibility", "false");
 		model.addAttribute("fibonacci", res.toString());
 		
-		return new ModelAndView("fibonacci");
+		return new ModelAndView("java_examples/fibonacci");
 	}
 }
