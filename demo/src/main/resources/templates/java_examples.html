@@ -16,7 +16,7 @@
 			    <p>
 			    	This is fizz buzz generator, all you have to do is enter in a number that will be where fizz buzz will stop.
 			    </p>
-			    <form action="#" th:action="@{/fizzbuzz}" th:object="${fizzbuzz}"  method="post">
+			    <form action="#" th:action="@{/java_examples/fizzbuzz}" th:object="${fizzbuzz}"  method="post">
 		    		</br></br>
 		    		<label>Number:</label>
 		    		<input type="number" name="{numb}" th:field="*{numb}" th:value="*{numb}"/>
@@ -31,7 +31,7 @@
 			    	A palindrome, if a word is the same forward as it is backwords. </br>
 			    	Enter in a word and it will tell you if that word is a palindrome.
 			    </p>
-			    <form action="#" th:action="@{/palindrome}" th:object="${palindrome}" method="post">
+			    <form action="#" th:action="@{/java_examples/palindrome}" th:object="${palindrome}" method="post">
 			    	<label>Word:</label>
 	    			<input type="text" name="{input}" th:field="*{input}" th:value="*{input}"/>
 	    			</br></br>
@@ -44,10 +44,10 @@
 			    <p>
 			    	This is fibonacci sequence generator, enter in a number you would like to see the fibonacci sequence go too.
 			    </p>
-			    <form action="#" th:action="@{/fibonacci}" th:object="${fibonacci}" method="post">
+			    <form action="#" th:action="@{/java_examples/fibonacci}" th:object="${fibonacci}" method="post">
 		    		</br></br>
 		    		<label>Number:</label>
-		    		<input type="number" name="{number}" th:field="*{number}" th:value="*{number}"/>
+		    		<input type="number" th:field="*{number}" th:value="*{number}"/>
 		    		</br></br>
 		    		<input type="submit" value="Generate">
 			    </form>

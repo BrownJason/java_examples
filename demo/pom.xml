@@ -35,8 +35,9 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-		    <groupId>nz.net.ultraq.thymeleaf</groupId>
-		    <artifactId>thymeleaf-layout-dialect</artifactId>
+			  <groupId>org.thymeleaf</groupId>
+			  <artifactId>thymeleaf-spring4</artifactId>
+			  <version>3.0.0.RELEASE</version>
 		</dependency>
 
 		<!-- Optional, for bootstrap -->

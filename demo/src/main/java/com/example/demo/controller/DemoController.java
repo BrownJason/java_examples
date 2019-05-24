@@ -14,8 +14,6 @@ import com.example.demo.entities.Fibonacci;
 import com.example.demo.entities.FizzBuzz;
 import com.example.demo.entities.Palindrome;
 
-import groovy.lang.Tuple;
-
 @RestController
 public class DemoController {
 	
@@ -45,7 +43,7 @@ public class DemoController {
 		return new ModelAndView("java_examples/fizzbuzz");
 	}
 	
-	@RequestMapping(value="/fizzbuzz", params="numb", method=RequestMethod.POST)
+	@RequestMapping(value="/java_examples/fizzbuzz", params="numb", method=RequestMethod.POST)
 	public ModelAndView calculate(@RequestParam int numb, @ModelAttribute("fizzbuzz")FizzBuzz fizzbuzz, ModelMap model) {
 		StringBuilder res = new StringBuilder();
 		if(fizzbuzz.getNumb() != 0) {
@@ -71,7 +69,7 @@ public class DemoController {
 		return new ModelAndView("java_examples/palindrome");
 	}
 	
-	@RequestMapping(value="/palindrome", params="input", method=RequestMethod.POST)
+	@RequestMapping(value="/java_examples/palindrome", params="input", method=RequestMethod.POST)
 	public ModelAndView palindromeComp(@RequestParam String input, @ModelAttribute("palindrome")Palindrome palindrome, ModelMap model) {
 		String pali = palindrome.getInput().toLowerCase();
 		StringBuilder paliReverse = new StringBuilder(palindrome.getInput()).reverse();
@@ -98,7 +96,7 @@ public class DemoController {
 		return new ModelAndView("java_examples/fibonacci");
 	}
 	
-	@RequestMapping(value="/fibonacci", params="number",method=RequestMethod.POST)
+	@RequestMapping(value="/java_examples/fibonacci", params="number",method=RequestMethod.POST)
 	public ModelAndView fiboComplete(@RequestParam int number, @ModelAttribute("fibonacci")Fibonacci fibonacci, ModelMap model) {
 		StringBuilder res = new StringBuilder();
 		if(fibonacci.getNumber() != 0) {
