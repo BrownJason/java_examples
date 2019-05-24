@@ -40,6 +40,11 @@ public class DemoController {
 		return mv;
 	}
 
+	@RequestMapping(value="/java_examples/fizzbuzz", method=RequestMethod.GET)
+	public ModelAndView getFizzbuzz() {
+		return new ModelAndView("java_examples/fizzbuzz");
+	}
+	
 	@RequestMapping(value="/fizzbuzz", params="numb", method=RequestMethod.POST)
 	public ModelAndView calculate(@RequestParam int numb, @ModelAttribute("fizzbuzz")FizzBuzz fizzbuzz, ModelMap model) {
 		StringBuilder res = new StringBuilder();
@@ -59,6 +64,11 @@ public class DemoController {
 		model.addAttribute("fizzbuzz", res.toString());
 		
 		return new ModelAndView("fizzbuzz");
+	}
+
+	@RequestMapping(value="/java_examples/palindrome", method=RequestMethod.GET)
+	public ModelAndView getPalindrome() {
+		return new ModelAndView("java_examples/palindrome");
 	}
 	
 	@RequestMapping(value="/palindrome", params="input", method=RequestMethod.POST)
@@ -83,7 +93,12 @@ public class DemoController {
 		return new ModelAndView("palindrome");
 	}
 	
-	@RequestMapping(value="fibonacci", params="number",method=RequestMethod.POST)
+	@RequestMapping(value="/java_examples/fibonacci", method=RequestMethod.GET)
+	public ModelAndView getFibo() {
+		return new ModelAndView("java_examples/fibonacci");
+	}
+	
+	@RequestMapping(value="/fibonacci", params="number",method=RequestMethod.POST)
 	public ModelAndView fiboComplete(@RequestParam int number, @ModelAttribute("fibonacci")Fibonacci fibonacci, ModelMap model) {
 		StringBuilder res = new StringBuilder();
 		if(fibonacci.getNumber() != 0) {
