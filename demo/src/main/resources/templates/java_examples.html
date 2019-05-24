@@ -47,7 +47,7 @@
 			    <form action="#" th:action="@{/fibonacci}" th:object="${fibonacci}" method="post">
 		    		</br></br>
 		    		<label>Number:</label>
-		    		<input type="number" th:value="*{number}"/>
+		    		<input type="number" name="{number}" th:field="*{number}" th:value="*{number}"/>
 		    		</br></br>
 		    		<input type="submit" value="Generate">
 			    </form>
