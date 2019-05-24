@@ -18,8 +18,8 @@ import com.example.demo.entities.Palindrome;
 public class DemoController {
 	
 	@GetMapping(value ="/")
-	public ModelAndView homePage(Model model) {
-		return new ModelAndView("index");
+	public String homePage() {
+		return "index";
 	}
 	
 	@GetMapping(value = "/java_examples")
