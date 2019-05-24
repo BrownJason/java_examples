@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Java Examples</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+    <div th:replace="fragments/header :: header"/>
+    
+	<div class="container">
+		<div class="row">
+			<div class="col-6 col-md-4">
+			    <h2>Fizz Buzz</h2>
+			    <hr>
+			    <p>
+			    	This is fizz buzz generator, all you have to do is enter in a number that will be where fizz buzz will stop.
+			    </p>
+			    <form action="#" th:action="@{/java_examples/fizzbuzz}" th:object="${fizzbuzz}"  method="post">
+		    		</br></br>
+		    		<label>Number:</label>
+		    		<input type="number" name="{numb}" th:field="*{numb}" th:value="*{numb}"/>
+		    		</br></br>
+		    		<input type="submit" value="Generate">
+			    </form>
+	    	</div>
+	    	<div class="col-6 col-md-4">
+	    		<h2>Palindrome</h2>
+			    <hr>
+			    <p>
+			    	A palindrome, if a word is the same forward as it is backwords. </br>
+			    	Enter in a word and it will tell you if that word is a palindrome.
+			    </p>
+			    <form action="#" th:action="@{/java_examples/palindrome}" th:object="${palindrome}" method="post">
+			    	<label>Word:</label>
+	    			<input type="text" name="{input}" th:field="*{input}" th:value="*{input}"/>
+	    			</br></br>
+	    			<input type="submit" value="Generate">
+			    </form>
+	    	</div>
+	    	<div class="col-6 col-md-4">
+	    		<h2>Fibonacci Sequence</h2>
+			    <hr>
+			    <p>
+			    	This is fibonacci sequence generator, enter in a number you would like to see the fibonacci sequence go too.
+			    </p>
+			    <form action="#" th:action="@{/java_examples/fibonacci}" th:object="${fibonacci}" method="post">
+		    		</br></br>
+		    		<label>Number:</label>
+		    		<input type="number" th:value="*{number}"/>
+		    		</br></br>
+		    		<input type="submit" value="Generate">
+			    </form>
+	    	</div>
+		</div>
+		<hr>
+		<div class="row">
+			<h2>Under Construction</h2>
+			<p>Working on getting more content here as soon as possible, thank you for your understanding.</p>
+			<form action="#" th:action="@{/}" method="get">
+				<input type="submit" name="@{/}" value="Home Page">
+			</form>
+		</div>
+    </div>	
+
+	<div  th:replace="fragments/footer :: footer">
+	</div>
+</body>
+</html>

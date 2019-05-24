@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="sticky-footer-navbar.css" rel="stylesheet">
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+    <div th:replace="fragments/header :: header"/>
+    
+	<div class="container">
+		<div class="starter-template">
+		    <h2>Palindrome</h2>
+		    <hr>
+		    <p>
+		    	A palindrome, if a word is the same forward as it is backwords. </br>
+		    	Enter in a word and it will tell you if that word is a palindrome.
+		    </p>
+		    <form action="#" th:action="@{/palindrome_complete}" th:object="${palindrome}" method="post">
+		    	<label>Word:</label>
+    			<input type="text" name="input"/>
+    			</br></br>
+    			<input type="submit" name="@{/palindrome_complete}" value="Generate">
+		    </form>
+	    </div>
+	</div>
+	<div  th:replace="fragments/footer :: footer">
+	</div>
+</body>
+</html>

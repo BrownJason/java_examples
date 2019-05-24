@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="sticky-footer-navbar.css" rel="stylesheet">
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+    <div th:replace="fragments/header :: header"/>
+    
+	<div class="container">
+		<div class="starter-template">
+		    <h2>Palindrome</h2>
+		    <hr>
+		    <h3>The word you entered is <span th:text="${palindrome}"></span></h3>
+		    <h4>Forward: <span th:text="${palindrome}"></span></h4>
+		    <h4>Reversed: <span th:text="${palindromeReverse}"></span></h4>
+		    <h4>Is a Palindrome: <span th:text="${isPali}"></span></h4>
+		    </br></br>
+		    <form action="#" th:action="@{/java_examples}" method="get">
+		    	<input type="submit" name="@{/java_examples}" value="Back"/>
+		    </form>
+		</div>
+	</div>
+	<div  th:replace="fragments/footer :: footer">
+	</div>
+</body>
+</html>

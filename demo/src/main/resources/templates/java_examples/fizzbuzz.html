@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>FizzBuzz</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="sticky-footer-navbar.css" rel="stylesheet">
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+    <div th:replace="fragments/header :: header"/>
+    
+	<div class="container">
+		<div class="row">
+		    <h2>FizzBuzz</h2>
+		    <hr>
+		    <p>
+		    	This text area contains fizz buzz that was generated from 1 to the input you entered in the previous page.</br>
+		    	In the area you will notice a couple of keywords.
+		    </p>
+		    <ul>
+		   		<li>lucky - This is where there were any number that was equal to or contains a 3</li>
+		   		<li>buzz - A number that is a dividend of 5</li>
+		   		<li>fizz - A number that is a dividend of 3</li>
+		   		<li>fizzbuzz - A number that is a dividend of 15</li>
+		   	</ul>
+		   	</br>
+		    <textarea rows="10" cols="10" th:text="${fizzbuzz}" style="width: 300px; background-color: #C8C8C8" readonly></textarea>
+		    <form action="#" th:action="@{/java_examples}" method="get">
+		    	<input type="submit" name="@{/java_examples}" value="Back"/>
+		    </form>
+	    </div>
+    </div>
+	<div  th:replace="fragments/footer :: footer">
+	</div>
+</body>
+</html>

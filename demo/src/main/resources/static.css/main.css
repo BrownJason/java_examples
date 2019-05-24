@@ -1,0 +1,16 @@
+h1{
+	color:#0000FF;
+}
+
+h2{
+	color:#FF0000;
+}
+
+footer{ 
+	position: fixed;
+  	right: 0;
+  	left: 0;
+  	z-index: 1030;
+    margin-top:60px;
+    height: 100px;
+}

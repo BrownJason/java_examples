@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+    <div th:replace="fragments/header :: header"/>
+    
+	<div class="container">
+		<div class="starter-template">
+		    <h2>Fibonacci Sequence</h2>
+		    <hr>
+		    <p>
+		    	This is fibonacci sequence generator, enter in a number you would like to see the fibonacci sequence go too.
+		    </p>
+		    <form action="#" th:action="@{/fibo_complete}" th:object="${fibonacci}" method="post">
+	    		<label>Number:</label>
+	    		<input type="number" name="number" value="*{number}"/>
+	    		</br></br>
+	    		<input type="submit" name="@{/fibo_complete}" value="Generate">
+		    </form>
+    	</div>
+    </div>	
+
+	<div  th:replace="fragments/footer :: footer">
+	</div>
+</body>
+</html>

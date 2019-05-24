@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">  
+<head>
+    <title>Java Spring Boot</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body"d-flex flex-column">
+    <div th:replace="fragments/header :: header"/>
+	<div id="page-content">
+		<div class="container">
+			<div class="starter-template">
+				<h1>Welcome!</h1>
+				<h3>Java using spring boot.</h3>
+				<p>Each one of these links will take you to another page to do some basic java programs.</p>
+				<ul>
+	    			<h4>1. Here are some basic <a href="/jabrown/java_examples">Java Examples</a>, enjoy!</h4>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div  th:replace="fragments/footer :: footer">
+	</div>
+</body>
+</html>
