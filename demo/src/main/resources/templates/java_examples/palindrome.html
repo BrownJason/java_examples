@@ -4,14 +4,13 @@
 <head>
     <title>Palindrome</title>
     <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link href="sticky-footer-navbar.css" rel="stylesheet">
     <div th:replace="fragments/header :: header-css"/>
 </head>
 <body>
     <div th:replace="fragments/header :: header"/>
     
 	<div class="container">
-		<div class="row">
+		<div class="starter-template">
 			<h2>Palindrome</h2>
 		    <hr>
 		    <h3>The word you entered is <span th:text="${palindrome}"></span></h3>
