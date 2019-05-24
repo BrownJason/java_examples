@@ -24,7 +24,7 @@ public class DemoController {
 	}
 	
 	@GetMapping(value = "/java_examples")
-	public ModelAndView fizzbuzz(Model model) {
+	public String fizzbuzz(Model model) {
 		ModelMap map = new ModelMap();
 		FizzBuzz fizz = new FizzBuzz();
 		Fibonacci fibo = new Fibonacci();
@@ -36,16 +36,16 @@ public class DemoController {
 		ModelAndView mv = new ModelAndView("java_examples");
 		mv.addAllObjects(map);
 		
-		return mv;
+		return "java_examples";
 	}
 
 	@RequestMapping(value="/java_examples/fizzbuzz", method=RequestMethod.GET)
-	public ModelAndView getFizzbuzz() {
-		return new ModelAndView("java_examples/fizzbuzz");
+	public String getFizzbuzz() {
+		return "java_examples/fizzbuzz";
 	}
 	
 	@RequestMapping(value="/java_examples/fizzbuzz", params="numb", method=RequestMethod.POST)
-	public ModelAndView calculate(@RequestParam int numb, @ModelAttribute("fizzbuzz")FizzBuzz fizzbuzz, ModelMap model) {
+	public String calculate(@RequestParam int numb, @ModelAttribute("fizzbuzz")FizzBuzz fizzbuzz, ModelMap model) {
 		StringBuilder res = new StringBuilder();
 		if(fizzbuzz.getNumb() != 0) {
 			for(int start = 1; start <= fizzbuzz.getNumb(); start++) {
@@ -62,16 +62,16 @@ public class DemoController {
 		model.addAttribute("classFizzVisibility", "true");
 		model.addAttribute("fizzbuzz", res.toString());
 		
-		return new ModelAndView("java_examples/fizzbuzz");
+		return "java_examples/fizzbuzz";
 	}
 
 	@RequestMapping(value="/java_examples/palindrome", method=RequestMethod.GET)
-	public ModelAndView getPalindrome() {
-		return new ModelAndView("java_examples/palindrome");
+	public String getPalindrome() {
+		return "java_examples/palindrome";
 	}
 	
 	@RequestMapping(value="/java_examples/palindrome", params="input", method=RequestMethod.POST)
-	public ModelAndView palindromeComp(@RequestParam String input, @ModelAttribute("palindrome")Palindrome palindrome, ModelMap model) {
+	public String palindromeComp(@RequestParam String input, @ModelAttribute("palindrome")Palindrome palindrome, ModelMap model) {
 		String pali = palindrome.getInput().toLowerCase();
 		StringBuilder paliReverse = new StringBuilder(palindrome.getInput()).reverse();
 		boolean isPali = pali.contentEquals(paliReverse);
@@ -89,16 +89,16 @@ public class DemoController {
 		model.addAttribute("classFizzVisibility", "false");
 		model.addAttribute("classFiboVisibility", "false");
 		model.addAttribute("classPaliVisibility", "true");
-		return new ModelAndView("java_examples/palindrome");
+		return "java_examples/palindrome";
 	}
 	
 	@RequestMapping(value="/java_examples/fibonacci", method=RequestMethod.GET)
-	public ModelAndView getFibo() {
-		return new ModelAndView("java_examples/fibonacci");
+	public String getFibo() {
+		return "java_examples/fibonacci";
 	}
 	
 	@RequestMapping(value="/java_examples/fibonacci", params="number",method=RequestMethod.POST)
-	public ModelAndView fiboComplete(@RequestParam int number, @ModelAttribute("fibonacci")Fibonacci fibonacci, ModelMap model) {
+	public String fiboComplete(@RequestParam int number, @ModelAttribute("fibonacci")Fibonacci fibonacci, ModelMap model) {
 		StringBuilder res = new StringBuilder();
 		if(fibonacci.getNumber() != 0) {
 			 int a = 0, b = 1, c; 
@@ -122,6 +122,6 @@ public class DemoController {
 		model.addAttribute("classFizzVisibility", "false");
 		model.addAttribute("fibonacci", res.toString());
 		
-		return new ModelAndView("java_examples/fibonacci");
+		return "java_examples/fibonacci";
 	}
 }
