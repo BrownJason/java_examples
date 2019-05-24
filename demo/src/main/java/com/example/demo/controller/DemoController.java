@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +15,7 @@ import com.example.demo.entities.Fibonacci;
 import com.example.demo.entities.FizzBuzz;
 import com.example.demo.entities.Palindrome;
 
-@RestController
+@Controller
 public class DemoController {
 	
 	@GetMapping(value ="/")
