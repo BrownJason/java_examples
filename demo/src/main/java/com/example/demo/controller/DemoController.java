@@ -33,8 +33,7 @@ public class DemoController {
 		map.addAttribute("fibonacci", fibo);
 		map.addAttribute("palindrome", pali);
 		
-		ModelAndView mv = new ModelAndView("java_examples");
-		mv.addAllObjects(map);
+		model.addAllAttributes(map);
 		
 		return "java_examples";
 	}
