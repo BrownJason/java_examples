@@ -58,8 +58,8 @@ public class DemoController {
 	
 	@RequestMapping(value="/palindrome", params="input", method=RequestMethod.GET)
 	public String palindromeComp(@RequestParam String input, @ModelAttribute("palindrome")Palindrome palindrome, ModelMap model) {
-		String pali = palindrome.getInput().toLowerCase();
-		StringBuilder paliReverse = new StringBuilder(palindrome.getInput()).reverse();
+		String pali = palindrome.getWord().toLowerCase();
+		StringBuilder paliReverse = new StringBuilder(palindrome.getWord()).reverse();
 		boolean isPali = pali.contentEquals(paliReverse);
 		
 		if(isPali) {

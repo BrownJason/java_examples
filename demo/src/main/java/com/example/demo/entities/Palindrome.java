@@ -1,14 +1,14 @@
 package com.example.demo.entities;
 
 public class Palindrome {
-	private String input;
+	private String word;
 
-	public String getInput() {
-		return input;
+	public String getWord() {
+		return word;
 	}
 
-	public void setInput(String input) {
-		this.input = input;
+	public void setWord(String word) {
+		this.word = word;
 	}
 
 }

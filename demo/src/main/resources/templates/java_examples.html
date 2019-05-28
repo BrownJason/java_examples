@@ -33,7 +33,7 @@
 			    </p>
 			    <form action="#" th:action="@{/palindrome}" th:object="${palindrome}" method="get">
 			    	<label>Word:</label>
-	    			<input type="text" name="{input}" th:field="*{input}" th:value="*{input}"/>
+	    			<input type="text" name="{word}" th:field="*{word}" th:value="*{word}"/>
 	    			</br></br>
 	    			<input type="submit" value="Generate">
 			    </form>
