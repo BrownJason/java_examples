@@ -38,7 +38,7 @@ public class DemoController {
 		return "java_examples";
 	}
 	
-	@RequestMapping(value="/fizzbuzz", params="numb", method=RequestMethod.POST)
+	@RequestMapping(value="/fizzbuzz", params="numb", method=RequestMethod.GET)
 	public String calculate(@RequestParam int numb, @ModelAttribute("fizzbuzz")FizzBuzz fizzbuzz, ModelMap model) {
 		StringBuilder res = new StringBuilder();
 		if(fizzbuzz.getNumb() != 0) {
@@ -56,7 +56,7 @@ public class DemoController {
 		return "java_examples/fizzbuzz";
 	}
 	
-	@RequestMapping(value="/palindrome", params="input", method=RequestMethod.POST)
+	@RequestMapping(value="/palindrome", params="input", method=RequestMethod.GET)
 	public String palindromeComp(@RequestParam String input, @ModelAttribute("palindrome")Palindrome palindrome, ModelMap model) {
 		String pali = palindrome.getInput().toLowerCase();
 		StringBuilder paliReverse = new StringBuilder(palindrome.getInput()).reverse();
@@ -75,30 +75,30 @@ public class DemoController {
 		return "java_examples/palindrome";
 	}
 	
-	@RequestMapping(value="/fibonacci", params="number",method=RequestMethod.POST)
-	public String fiboComplete(@RequestParam int number, @ModelAttribute("fibonacci")Fibonacci fibonacci, ModelMap model) {
-		StringBuilder res = new StringBuilder();
-		if(fibonacci.getNumber() != 0) {
-			 int a = 0, b = 1, c; 
-		        if (fibonacci.getNumber()  == 0) {
-		        	res.append(a); 
-		        } else {
-		        	res.append("1 ");
-			        for (int i = 2; i <= fibonacci.getNumber() ; i++) 
-			        { 
-			            c = a + b; 
-			            a = b; 
-			            b = c; 
-			            res.append(b);
-			            res.append(" ");
-			        } 
-		        }
-		}
-		
-		model.addAttribute("fibonacci", res.toString());
-		
-		return "java_examples/fibonacci";
-	}
+//	@RequestMapping(value="/fibonacci", params="number",method=RequestMethod.POST)
+//	public String fiboComplete(@RequestParam int number, @ModelAttribute("fibonacci")Fibonacci fibonacci, ModelMap model) {
+//		StringBuilder res = new StringBuilder();
+//		if(fibonacci.getNumber() != 0) {
+//			 int a = 0, b = 1, c; 
+//		        if (fibonacci.getNumber()  == 0) {
+//		        	res.append(a); 
+//		        } else {
+//		        	res.append("1 ");
+//			        for (int i = 2; i <= fibonacci.getNumber() ; i++) 
+//			        { 
+//			            c = a + b; 
+//			            a = b; 
+//			            b = c; 
+//			            res.append(b);
+//			            res.append(" ");
+//			        } 
+//		        }
+//		}
+//		
+//		model.addAttribute("fibonacci", res.toString());
+//		
+//		return "java_examples/fibonacci";
+//	}
 	
 	@RequestMapping(value="/fibonacci", params="number",method=RequestMethod.GET)
 	public String getFiboComplete(@RequestParam int number, @ModelAttribute("fibonacci")Fibonacci fibonacci, ModelMap model) {
