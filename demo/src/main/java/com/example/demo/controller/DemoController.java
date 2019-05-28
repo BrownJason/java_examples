@@ -51,9 +51,6 @@ public class DemoController {
 	                                        : start + " ");
 			}
 		}
-		model.addAttribute("classPaliVisibility", "false");
-		model.addAttribute("classFiboVisibility", "false");
-		model.addAttribute("classFizzVisibility", "true");
 		model.addAttribute("fizzbuzz", res.toString());
 		
 		return "java_examples/fizzbuzz";
@@ -74,10 +71,7 @@ public class DemoController {
 			model.addAttribute("palindromeReverse", paliReverse);
 			model.addAttribute("isPali", isPali);
 		}
-
-		model.addAttribute("classFizzVisibility", "false");
-		model.addAttribute("classFiboVisibility", "false");
-		model.addAttribute("classPaliVisibility", "true");
+		
 		return "java_examples/palindrome";
 	}
 	
@@ -100,10 +94,32 @@ public class DemoController {
 			        } 
 		        }
 		}
-
-		model.addAttribute("classPaliVisibility", "false");
-		model.addAttribute("classFiboVisibility", "true");
-		model.addAttribute("classFizzVisibility", "false");
+		
+		model.addAttribute("fibonacci", res.toString());
+		
+		return "java_examples/fibonacci";
+	}
+	
+	@RequestMapping(value="/fibonacci", params="number",method=RequestMethod.GET)
+	public String getFiboComplete(@RequestParam int number, @ModelAttribute("fibonacci")Fibonacci fibonacci, ModelMap model) {
+		StringBuilder res = new StringBuilder();
+		if(fibonacci.getNumber() != 0) {
+			 int a = 0, b = 1, c; 
+		        if (fibonacci.getNumber()  == 0) {
+		        	res.append(a); 
+		        } else {
+		        	res.append("1 ");
+			        for (int i = 2; i <= fibonacci.getNumber() ; i++) 
+			        { 
+			            c = a + b; 
+			            a = b; 
+			            b = c; 
+			            res.append(b);
+			            res.append(" ");
+			        } 
+		        }
+		}
+		
 		model.addAttribute("fibonacci", res.toString());
 		
 		return "java_examples/fibonacci";
