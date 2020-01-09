@@ -131,13 +131,16 @@ public class DemoController {
 	@RequestMapping(value="/pascal", params="number",method=RequestMethod.GET)
 	public String getPascalComplete(@RequestParam int number, @ModelAttribute("pascal")Pascal pascal, ModelMap model) {
 		StringBuilder res = new StringBuilder();
-		int rows = number, coef = 1;
-        for(int i = 0; i < rows; i++) {
-            for(int space = 1; space < rows - i; ++space) {
+		int coef = 1;
+        for(int i = 0; i < number; i++) {
+            for(int space = 1; space < number - i; ++space) {
                 res.append("    ");
             }
             for(int j = 0; j <= i; j++) {
-                j == 0 || i == 0 ? coef = 1 : coef = coef * (i - j + 1) / j;
+                if (j == 0 || i == 0)
+                    coef = 1;
+                else
+                    coef = coef * (i - j + 1) / j;
 
                 res.append("     "); 
                 res.append(coef);
