@@ -147,7 +147,7 @@ public class DemoController {
 //                    	res.append(" ");
 //                    }
 //                }
-                res.append("    " + coef);
+                res.append(coef + "     ");
             }
             res.append(System.getProperty("line.separator"));
         }
