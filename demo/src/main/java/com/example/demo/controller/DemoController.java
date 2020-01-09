@@ -141,6 +141,8 @@ public class DemoController {
                     coef = 1;
                 else
                     coef = coef * (i - j + 1) / j;
+
+                res.append("  "); 
                 res.append(coef);
             }
             res.append(System.getProperty("line.separator"));
