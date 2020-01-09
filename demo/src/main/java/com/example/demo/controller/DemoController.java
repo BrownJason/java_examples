@@ -143,8 +143,11 @@ public class DemoController {
                     coef = coef * (i - j + 1) / j;
 
                 res.append("    "); 
-                while(coef % 10 != 0) {
-                    res.append(" "); 
+                int x = (coef/100) % 10;
+                if(x != 1) {
+                    for(int s = 0; s < x; s++) {
+                    	res.append(" ");
+                    }
                 }
                 res.append(coef);
             }
