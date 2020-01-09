@@ -134,7 +134,7 @@ public class DemoController {
 		int rows = 6, coef = 1;
         for(int i = 0; i < rows; i++) {
             for(int space = 1; space < rows - i; ++space) {
-                res.append("  ");
+                res.append("    ");
             }
             for(int j = 0; j <= i; j++) {
                 if (j == 0 || i == 0)
@@ -142,7 +142,7 @@ public class DemoController {
                 else
                     coef = coef * (i - j + 1) / j;
 
-                res.append("  "); 
+                res.append("    "); 
                 res.append(coef);
             }
             res.append(System.getProperty("line.separator"));
