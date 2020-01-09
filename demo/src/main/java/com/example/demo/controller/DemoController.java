@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.demo.entities.Fibonacci;
 import com.example.demo.entities.FizzBuzz;
 import com.example.demo.entities.Palindrome;
+import com.example.demo.entities.Pascal;
 
 @Controller
 public class DemoController {
@@ -123,5 +124,27 @@ public class DemoController {
 		model.addAttribute("fibonacci", res.toString());
 		
 		return "java_examples/fibonacci";
+	}
+	
+	@RequestMapping(value="/pascal", params="number",method=RequestMethod.GET)
+	public String getPascalComplete(@RequestParam int number, @ModelAttribute("pascal")Pascal pascal, ModelMap model) {
+		StringBuilder res = new StringBuilder();
+		int rows = 6, coef = 1;
+        for(int i = 0; i < rows; i++) {
+            for(int space = 1; space < rows - i; ++space) {
+                res.append("  ");
+            }
+            for(int j = 0; j <= i; j++) {
+                if (j == 0 || i == 0)
+                    coef = 1;
+                else
+                    coef = coef * (i - j + 1) / j;
+                res.append(coef);
+            }
+        }
+		
+		model.addAttribute("pascal", res.toString());
+		
+		return "java_examples/pascal";
 	}
 }

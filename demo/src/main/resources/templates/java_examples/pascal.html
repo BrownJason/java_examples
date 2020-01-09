@@ -1,0 +1,29 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pascal</title>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+    <div th:replace="fragments/header :: header"/>
+    
+	<div class="container">
+		<div class="starter-template">
+    		<h2>Pascal</h2>
+		    <hr>
+		    <p>
+		    	This text area contains the pascal triangle from the number entered.
+		    </p>
+		   	</br>
+		    <textarea rows="10" cols="10" th:text="${pascal}" style="width: 300px; background-color: #C8C8C8" readonly></textarea>
+		    <form action="#" th:action="@{/java_examples}" method="get">
+		    	<input type="submit" name="@{/java_examples}" value="Back"/>
+		    </form>
+	    </div>
+    </div>
+	<div  th:replace="fragments/footer :: footer">
+	</div>
+</body>
+</html>
