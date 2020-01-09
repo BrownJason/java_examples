@@ -131,7 +131,7 @@ public class DemoController {
 	@RequestMapping(value="/pascal", params="number",method=RequestMethod.GET)
 	public String getPascalComplete(@RequestParam int number, @ModelAttribute("pascal")Pascal pascal, ModelMap model) {
 		StringBuilder res = new StringBuilder();
-		int rows = 6, coef = 1;
+		int rows = number, coef = 1;
         for(int i = 0; i < rows; i++) {
             for(int space = 1; space < rows - i; ++space) {
                 res.append("    ");
