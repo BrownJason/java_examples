@@ -143,6 +143,7 @@ public class DemoController {
                     coef = coef * (i - j + 1) / j;
                 res.append(coef);
             }
+            res.append(System.getProperty("line.separator"));
         }
 		
 		model.addAttribute("pascal", res.toString());
