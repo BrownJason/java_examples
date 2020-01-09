@@ -30,9 +30,11 @@ public class DemoController {
 		FizzBuzz fizz = new FizzBuzz();
 		Fibonacci fibo = new Fibonacci();
 		Palindrome pali = new Palindrome();
+		Pascal pasc = new Pascal();
 		map.addAttribute("fizzbuzz", fizz);
 		map.addAttribute("fibonacci", fibo);
 		map.addAttribute("palindrome", pali);
+		map.addAttribute("pascal", pasc);
 		
 		model.addAllAttributes(map);
 		

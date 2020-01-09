@@ -60,6 +60,13 @@
 				<hr>
 				<p>Pascal's triangle is a triangular array of binomial coefficients.</p>
 				
+			    <form action="#" th:action="@{/pascal}" th:object="${pascal}" method="get">
+		    		</br></br>
+		    		<label>Number:</label>
+		    		<input type="number" th:field="*{numbs}" th:value="*{numbs}"/>
+		    		</br></br>
+		    		<input type="submit" value="Generate">
+			    </form>
 			</div>
 		</div>
     </div>	
