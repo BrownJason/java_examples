@@ -142,7 +142,10 @@ public class DemoController {
                 else
                     coef = coef * (i - j + 1) / j;
 
-                res.append("     "); 
+                res.append("    "); 
+                while(coef % 10 != 0) {
+                    res.append(" "); 
+                }
                 res.append(coef);
             }
             res.append(System.getProperty("line.separator"));
