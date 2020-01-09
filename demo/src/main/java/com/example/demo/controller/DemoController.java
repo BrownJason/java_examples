@@ -142,13 +142,13 @@ public class DemoController {
                 else
                     coef = coef * (i - j + 1) / j;
 
-                res.append("    "); 
-                String x = "" + coef;
-                if(x.length() != 1) {
-                    for(int s = 0; s < x.length(); s++) {
-                    	res.append(" ");
-                    }
-                }
+                res.append("   "); 
+//                String x = "" + coef;
+//                if(x.length() != 1) {
+//                    for(int s = 0; s < x.length(); s++) {
+//                    	res.append(" ");
+//                    }
+//                }
                 res.append(coef);
             }
             res.append(System.getProperty("line.separator"));
