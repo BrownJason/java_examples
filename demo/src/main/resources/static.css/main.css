@@ -12,10 +12,17 @@ footer{
     height: 100px;
 }
 
+.view_port {
+  background-color: black;
+  height: 25px;
+  width: 100%;
+  overflow: hidden;
+}
+
 .robo-eye-bk {
-	background-color: black;
-	color: white;
-	width: 100%;
+  color: white;
+  float: left;
+  margin-right: 2%;
 }
 
 .robo-eye {

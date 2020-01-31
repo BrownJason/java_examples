@@ -1,58 +1,62 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<title>Java Examples</title>
 	<link href="../static.css/main.css" th:href="@{/css/main.css}" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <div th:replace="fragments/header :: header-css"/>
+	<link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<div th:replace="fragments/header :: header-css" />
 </head>
+
 <body>
-    <div th:replace="fragments/header :: header"/>
-    
+	<div th:replace="fragments/header :: header" />
+
 	<div class="container">
 		<div class="row">
 			<div class="col-6 col-md-4">
-			    <h2>Fizz Buzz</h2>
-			    <hr>
-			    <p>
-			    	This is fizz buzz generator, all you have to do is enter in a number that will be where fizz buzz will stop.
-			    </p>
-			    <form action="#" th:action="@{/fizzbuzz}" th:object="${fizzbuzz}"  method="get">
-		    		</br></br>
-		    		<label>Number:</label>
-		    		<input type="number" name="{numb}" th:field="*{numb}" th:value="*{numb}"/>
-		    		</br></br>
-		    		<input type="submit" value="Generate">
-			    </form>
-	    	</div>
-	    	<div class="col-6 col-md-4">
-	    		<h2>Palindrome</h2>
-			    <hr>
-			    <p>
-			    	A palindrome, if a word is the same forward as it is backwords. </br>
-			    	Enter in a word and it will tell you if that word is a palindrome.
-			    </p>
-			    <form action="#" th:action="@{/palindrome}" th:object="${palindrome}" method="get">
-			    	<label>Word:</label>
-	    			<input type="text" name="{word}" th:field="*{word}" th:value="*{word}"/>
-	    			</br></br>
-	    			<input type="submit" value="Generate">
-			    </form>
-	    	</div>
-	    	<div class="col-6 col-md-4">
-	    		<h2>Fibonacci Sequence</h2>
-			    <hr>
-			    <p>
-			    	This is fibonacci sequence generator, enter in a number you would like to see the fibonacci sequence go too.
-			    </p>
-			    <form action="#" th:action="@{/fibonacci}" th:object="${fibonacci}" method="get">
-		    		</br></br>
-		    		<label>Number:</label>
-		    		<input type="number" th:field="*{number}" th:value="*{number}"/>
-		    		</br></br>
-		    		<input type="submit" value="Generate">
-			    </form>
-	    	</div>
+				<h2>Fizz Buzz</h2>
+				<hr>
+				<p>
+					This is fizz buzz generator, all you have to do is enter in a number that will be where fizz buzz
+					will stop.
+				</p>
+				<form action="#" th:action="@{/fizzbuzz}" th:object="${fizzbuzz}" method="get">
+					</br></br>
+					<label>Number:</label>
+					<input type="number" name="{numb}" th:field="*{numb}" th:value="*{numb}" />
+					</br></br>
+					<input type="submit" value="Generate">
+				</form>
+			</div>
+			<div class="col-6 col-md-4">
+				<h2>Palindrome</h2>
+				<hr>
+				<p>
+					A palindrome, if a word is the same forward as it is backwords. </br>
+					Enter in a word and it will tell you if that word is a palindrome.
+				</p>
+				<form action="#" th:action="@{/palindrome}" th:object="${palindrome}" method="get">
+					<label>Word:</label>
+					<input type="text" name="{word}" th:field="*{word}" th:value="*{word}" />
+					</br></br>
+					<input type="submit" value="Generate">
+				</form>
+			</div>
+			<div class="col-6 col-md-4">
+				<h2>Fibonacci Sequence</h2>
+				<hr>
+				<p>
+					This is fibonacci sequence generator, enter in a number you would like to see the fibonacci sequence
+					go too.
+				</p>
+				<form action="#" th:action="@{/fibonacci}" th:object="${fibonacci}" method="get">
+					</br></br>
+					<label>Number:</label>
+					<input type="number" th:field="*{number}" th:value="*{number}" />
+					</br></br>
+					<input type="submit" value="Generate">
+				</form>
+			</div>
 		</div>
 		<hr>
 		<div class="row">
@@ -60,27 +64,30 @@
 				<h2>Pascal's Triangle</h2>
 				<hr>
 				<p>Pascal's triangle is a triangular array of binomial coefficients.</p>
-				
-			    <form action="#" th:action="@{/pascal}" th:object="${pascal}" method="get">
-		    		</br></br>
-		    		<label>Number:</label>
-		    		<input type="number" th:field="*{number}" th:value="*{number}"/>
-		    		</br></br>
-		    		<input type="submit" value="Generate">
-			    </form>
+
+				<form action="#" th:action="@{/pascal}" th:object="${pascal}" method="get">
+					</br></br>
+					<label>Number:</label>
+					<input type="number" th:field="*{number}" th:value="*{number}" />
+					</br></br>
+					<input type="submit" value="Generate">
+				</form>
 			</div>
 			<div class="col-6 col-md-4">
 				<h2>Animations</h2>
 				<hr>
-				<div class="robo-eye-bk">
-					Robo Eye
-				    <div class="robo-eye" />
-			    </div>
+				<div class="view_port">
+					<div class="robo-eye-bk">
+						Robo Eye
+					</div>
+					<div class="robo-eye"></div>
+				</div>
 			</div>
 		</div>
-    </div>	
+	</div>
 
-	<div  th:replace="fragments/footer :: footer">
+	<div th:replace="fragments/footer :: footer">
 	</div>
 </body>
+
 </html>
