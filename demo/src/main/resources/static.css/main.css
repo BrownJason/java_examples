@@ -12,20 +12,20 @@ footer{
     height: 100px;
 }
 
-.view_port {
+div > .view_port{
   background-color: black;
   height: 25px;
   width: 100%;
   overflow: hidden;
 }
 
-.robo-eye-bk {
+div > .robo-eye-bk {
   color: white;
   float: left;
   margin-right: 2%;
 }
 
-.robo-eye {
+div >.robo-eye {
 	background-color: red;
   background-image: linear-gradient(to right,
       rgba(0, 0, 0, .9) 25%,
