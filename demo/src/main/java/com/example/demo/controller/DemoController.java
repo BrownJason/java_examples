@@ -78,31 +78,6 @@ public class DemoController {
 		return "java_examples/palindrome";
 	}
 	
-//	@RequestMapping(value="/fibonacci", params="number",method=RequestMethod.POST)
-//	public String fiboComplete(@RequestParam int number, @ModelAttribute("fibonacci")Fibonacci fibonacci, ModelMap model) {
-//		StringBuilder res = new StringBuilder();
-//		if(fibonacci.getNumber() != 0) {
-//			 int a = 0, b = 1, c; 
-//		        if (fibonacci.getNumber()  == 0) {
-//		        	res.append(a); 
-//		        } else {
-//		        	res.append("1 ");
-//			        for (int i = 2; i <= fibonacci.getNumber() ; i++) 
-//			        { 
-//			            c = a + b; 
-//			            a = b; 
-//			            b = c; 
-//			            res.append(b);
-//			            res.append(" ");
-//			        } 
-//		        }
-//		}
-//		
-//		model.addAttribute("fibonacci", res.toString());
-//		
-//		return "java_examples/fibonacci";
-//	}
-	
 	@RequestMapping(value="/fibonacci", params="number",method=RequestMethod.GET)
 	public String getFiboComplete(@RequestParam int number, @ModelAttribute("fibonacci")Fibonacci fibonacci, ModelMap model) {
 		StringBuilder res = new StringBuilder();
@@ -141,12 +116,6 @@ public class DemoController {
                     coef = 1;
                 else
                     coef = coef * (i - j + 1) / j;
-//                String x = "" + coef;
-//                if(x.length() != 1) {
-//                    for(int s = 0; s < x.length(); s++) {
-//                    	res.append(" ");
-//                    }
-//                }
                 res.append(coef + "     ");
             }
             res.append(System.getProperty("line.separator"));
