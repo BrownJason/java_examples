@@ -2,9 +2,6 @@ h1{
 	color:#0000FF;
 }
 
-h2{
-	color:#FF0000;
-}
 
 footer{ 
 	position: fixed;
@@ -16,7 +13,7 @@ footer{
 }
 
 .robo-eye-bk {
-	background-color: white;
+	background-color: black;
 	color: white;
 	width: 100%;
 }
