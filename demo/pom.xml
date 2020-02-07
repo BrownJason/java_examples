@@ -60,23 +60,50 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-				<plugin>
-					<groupId>org.jacoco</groupId>
-					<artifactId>jacoco-maven-plugin</artifactId>
-					<version>0.8.2</version>
-					<executions>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.2</version>
+				<executions>
 					<execution>
 						<id>prepare-agent</id>
 						<goals>
 							<goal>prepare-agent</goal>
 						</goals>
 					</execution>
+				    <execution>
+				      <id>coverage-report</id>
+				      <phase>post-integration-test</phase>
+				      <goals>
+				        <goal>report</goal>
+				      </goals>
+				    </execution>
 					<execution>
-						<id>report</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
+						<id>coverage-check</id>
+					    <goals>
+					    	<goal>check</goal>
+					    </goals>
+						<configuration>
+							<rules>
+								<rule>
+									<element>CLASS</element>
+									<excludes>
+										<exclude>com.example.demo.DemoApplication</exclude>
+										<exclude>com.example.demo.controller.DemoController</exclude>
+										<exclude>com.example.demo.entities.Pascal</exclude>
+										<exclude>com.example.demo.ServletInitializer</exclude>
+										<exclude>com.example.demo.controller.DemoController.homepage()</exclude>
+									</excludes>
+									<limits>
+										<limit>
+											<counter>LINE</counter>
+											<value>COVEREDRATIO</value>
+											<minimum>80%</minimum>
+										</limit>
+									</limits>
+								</rule>
+							</rules>
+						</configuration>
 					</execution>
 					<execution>
 						<id>post-unit-test</id>
@@ -98,7 +125,7 @@
 						<jacoco-agent.destfile>target/jacoco.exec</jacoco-agent.destfile>
 					</systemPropertyVariables>
 				</configuration>
-				</plugin>
+			</plugin>
 		</plugins>
 	</build>
 
